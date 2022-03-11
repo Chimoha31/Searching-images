@@ -3,6 +3,7 @@ import axios from 'axios';
 import './App.css';
 import SearchBar from './components/SearchBar';
 import ImageList from './components/ImageList';
+import logo from './logoPixabay.png';
 
 function App() {
   const [images, setImages] = useState([]);
@@ -26,7 +27,8 @@ function App() {
   }
 
   return (
-    <div className="ui container" style={{marginTop:'20px'}}>
+    <div className="ui container medium" style={{marginTop:'20px'}}>
+      <img src={logo} alt="pixabay-logo" className="pixabay-logo" />
       <SearchBar onSubmit={onSearchSubmit} />
       <ImageList images={images} />
     </div>
