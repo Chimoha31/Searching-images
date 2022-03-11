@@ -6,12 +6,13 @@ import ImageList from './components/ImageList';
 
 function App() {
   const [images, setImages] = useState([]);
+  const ApiKey = process.env.REACT_APP_PIXABAY_APIKEY
 
   //api通信
   const onSearchSubmit = async(term) => {
     try{
       const params = {
-        key: "",
+        key: ApiKey,
         q: term
       }
       const response = await axios.get("https://pixabay.com/api/", {params});
